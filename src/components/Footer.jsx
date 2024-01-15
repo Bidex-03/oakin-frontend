@@ -26,6 +26,8 @@ const Footer = () => {
     },
   ];
 
+   const year = new Date().getFullYear()
+
   return (
     <footer className="bg-[#333] px-6 py-4">
       {/* TOP */}
@@ -35,7 +37,7 @@ const Footer = () => {
           <span className="font-[Afterglow] font-semibold tracking-[3px] text-7xl lg:text-[7rem]">
             Oakin
           </span>
-          <p className="text-5xl my-4">Follow us</p>
+          <p className="text-5xl my-12 lg:my-4 ">Follow us</p>
           <div className="flex justify-between">
             <span>
               <BsInstagram color="#fff" size={25} />
@@ -51,7 +53,7 @@ const Footer = () => {
 
         {/* CONTACTS */}
         <div className="mb-8 lg:mb-0">
-          <p className="mb-6 text-5xl font-semibold">Contact Us</p>
+          <p className="mb-6 text-5xl">Contact Us</p>
           <div className="font-semibold text-2xl">
             <span className="flex mb-4">
               <AiOutlineMail color="#fff" size={25} />
@@ -70,7 +72,7 @@ const Footer = () => {
 
         {/* NAVIGATION */}
         <div>
-          <h2 className="text-5xl font-semibold mb-6">Navigation</h2>
+          <h2 className="text-5xl mb-6">Navigation</h2>
           <ul className="flex flex-col font-semibold text-2xl">
             {Links.map((link, i) => (
               <li key={i} className="mb-6">
@@ -94,7 +96,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="">
-          <p>Copyright@2022 All right reserved</p>
+          <p>Copyright@{year} All right reserved</p>
         </div>
       </section>
     </footer>

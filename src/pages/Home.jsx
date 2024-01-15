@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <section className="mt-4">
       <div className="mb-4">
-        <h1 className="flex justify-center text-center text-3xl font-semibold text-[#333] lg:text-6xl">
+        <h1 className="flex justify-center text-center text-[18px] md:text-5xl font-medium text-[#333] lg:text-6xl">
           Classy and comfy furniture for Your Family
         </h1>
       </div>
@@ -30,8 +30,8 @@ const Home = () => {
           Here is a few of our exclusive comfy team furniture set
         </p>
 
+        {/* IMPORT THE HOME PAGE IMAGES SLIDER */}
         <div className="my-8">
-          {/* <ImageSlider /> */}
           <SwiperSlider />
         </div>
       </div>
@@ -41,13 +41,13 @@ const Home = () => {
           <img src={Kitchen_Image} />
         </div>
         <div className="w-[90%] lg:w-[35%]">
-          <h2 className="text-4xl font-semibold uppercase md:text-8xl">
+          <h2 className="text-4xl font-semibold uppercase lg:text-8xl">
             Kitchen Set
           </h2>
-          <p className="my-10 text-4xl font-[500]">
+          <p className="mt-4 mb-5 text-4xl">
             Checkout our latest and trendy kitchen furniture set
           </p>
-          <button className="flex items-center gap-8 rounded-lg border-2 border-[#333] p-8 text-4xl font-semibold">
+          <button className="flex justify-between items-center text-center gap-8 rounded-[10px] border-2 border-[#333] p-8 text-4xl font-medium">
             View Kitchen Set
             <span>
               <BsArrowRightCircle size={25} />

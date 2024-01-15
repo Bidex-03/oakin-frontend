@@ -3,7 +3,6 @@ const API_URL = "https://oakin-backend.onrender.com/api"
 // fucntion to get all the CATEGORIES
 export async function getCategories() {
   try {
-    // const res = await fetch(`/api/categories`);
     const res = await fetch(`${API_URL}/categories`);
 
     if (!res.ok) {
@@ -23,7 +22,6 @@ export async function getCategories() {
 // function to get all the PRODUCTS under a CATEGORY
 export async function getProductsByCategoryID(categoryId) {
   try {
-    // const res = await fetch(`/api/products/category/${categoryId}`);
     const res = await fetch(`${API_URL}/products/category/${categoryId}`);
 
     if (!res.ok) {

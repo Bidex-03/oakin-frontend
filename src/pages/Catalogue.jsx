@@ -17,7 +17,6 @@ const Catalogue = () => {
           <img
             src={kitchen1}
             alt="Kitchen interior"
-            // className="w-full md:h-[90vh]"
             className="h-screen w-full object-cover"
           />
           <div className="absolute left-[5%] right-0 top-[20%] text-white">
