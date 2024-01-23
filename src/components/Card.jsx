@@ -1,11 +1,11 @@
 // import { Link } from 'react-router-dom';
 
-import LivingRoom from '../assets/living_room_category.jpg';
-import KitchenCategory from '../assets/kitchen_category.jpg';
-import BedroomCategory from '../assets/bedroom_category.jpg';
-import DinningCategory from '../assets/dinning_category.jpg';
-import BalconyCategory from '../assets/balcony_category.jpg';
-import OfficeCategory from '../assets/office_category.jpg';
+import LivingRoom from "../assets/living_room_category.jpg";
+import KitchenCategory from "../assets/kitchen_category.jpg";
+import BedroomCategory from "../assets/bedroom_category.jpg";
+import DinningCategory from "../assets/dinning_category.jpg";
+import BalconyCategory from "../assets/balcony_category.jpg";
+import OfficeCategory from "../assets/office_category.jpg";
 
 function Card() {
   return (

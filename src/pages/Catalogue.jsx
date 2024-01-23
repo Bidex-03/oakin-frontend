@@ -1,8 +1,7 @@
+import { Link, useLoaderData } from "react-router-dom";
+
 import kitchen1 from "../assets/kitchen_bg_1.jpg";
 import { BsArrowRightCircle } from "react-icons/bs";
-import Card from "../components/Card";
-
-import { Link, useLoaderData } from "react-router-dom";
 import CatalogueItem from "../components/CatalogueItem";
 import { getCategories } from "../services/apiProducts";
 
@@ -37,15 +36,14 @@ const Catalogue = () => {
       <section className="mx-[4rem] my-10">
         <h2 className="mb-6 text-4xl font-semibold">Furniture Categories</h2>
 
-        {/* GRID CONTAINER(CATALOGUE CARDS) */}
-        <Card />
-
         {/* Mapped out the CATEGORIES fetched from the API */}
-        {categories.map((category) => (
-          <Link to={`/catalogue/${category.categoryId}`} key={category._id}>
-            <CatalogueItem category={category} />
-          </Link>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          {categories.map((category) => (
+            <Link to={`/catalogue/${category.categoryId}`} key={category._id}>
+              <CatalogueItem category={category} />
+            </Link>
+          ))}
+        </div>
       </section>
     </main>
   );
