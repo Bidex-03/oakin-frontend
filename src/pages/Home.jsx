@@ -1,8 +1,9 @@
-import { BsArrowRightCircle } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 // import SwiperComp from "../components/SwiperComp";
 // import ImageSlider from "../components/ImageSlider";
 import SwiperSlider from "../components/SwiperSlider";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 import Home_Image from "../assets/image-1.jpg";
 import Kitchen_Image from "../assets/image-3.jpg";
@@ -47,12 +48,12 @@ const Home = () => {
           <p className="mt-4 mb-5 text-4xl">
             Checkout our latest and trendy kitchen furniture set
           </p>
-          <button className="flex justify-between items-center text-center gap-8 rounded-[10px] border-2 border-[#333] p-8 text-4xl font-medium">
+          <Link to={`/catalogue/2`} className="flex justify-between items-center text-center gap-8 rounded-[10px] border-2 border-[#333] p-8 text-4xl font-medium w-[80%] md:w-[70%]">
             View Kitchen Set
             <span>
               <BsArrowRightCircle size={25} />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,9 +1,24 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import Loader from "../components/Loader";
+import { useEffect } from "react";
 
 const RootLayout = () => {
+  const navigation = useNavigation();
+  console.log(navigation);
+  const isLoading = navigation.state === "loading";
+
+  // Add or remove loading class based on isLoading state
+  useEffect(() => {
+    if (isLoading) {
+      document.body.classList.add("loading");
+    } else {
+      document.body.classList.remove("loading");
+    }
+  }, [isLoading]);
+
   return (
     <>
       <Navigation />
@@ -11,6 +26,7 @@ const RootLayout = () => {
         <Outlet />
       </main>
       <Footer />
+      {isLoading && <Loader />}
     </>
   );
 };
