@@ -1,4 +1,4 @@
-const API_URL = "https://oakin-backend.onrender.com/api"
+const API_URL = "https://oakin-backend.onrender.com/api";
 
 // fucntion to get all the CATEGORIES
 export async function getCategories() {
@@ -37,5 +37,3 @@ export async function getProductsByCategoryID(categoryId) {
     throw error; // Rethrow the error for better debugging
   }
 }
-
-

@@ -22,6 +22,7 @@ const Home = () => {
           src={Home_Image}
           alt="Family Living room"
           className="object-contain md:w-full md:object-cover lg:h-[73vh]"
+          // className="h-screen w-full object-cover"
         />
       </div>
 
