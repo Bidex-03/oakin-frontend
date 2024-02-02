@@ -1,5 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { getProductsByCategoryID } from "../services/apiProducts";
+import { CiHeart } from "react-icons/ci";
+import { FaRegHeart } from "react-icons/fa";
 
 import image__1 from "../assets/image-2.jpg";
 
@@ -13,7 +15,7 @@ function CategoryPage() {
   return (
     <div>
       {/* <img src={category.image} alt={`${category.categoryId} image`} /> */}
-      <span className="relative">
+      <span className="relative -z-10">
         <img
           src={image__1}
           alt="Background image"
@@ -32,12 +34,19 @@ function CategoryPage() {
         {/* Mapped out the PRODUCTS based on the selected CATEGORY fetched from the API */}
         {/* Might remove this div later */}
         <div>
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left text-[#333]">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left text-[#333] my-8">
             {products.map((product) => (
               <li key={product._id}>
                 <img src={product.image} />
                 <h2 className="text-3xl font-medium my-4">{product.name}</h2>
                 <p className="text-2xl font-mono">{product.description}</p>
+                <div className="flex justify-between items-center text-3xl font-serif mt-4">
+                  <p>${product.price}</p>
+                  <button>
+                    <CiHeart color="#ff0000" size={25} />
+                    {/* <FaRegHeart color="#ff0000" size={25} /> */}
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
