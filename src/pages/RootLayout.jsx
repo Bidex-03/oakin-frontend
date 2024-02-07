@@ -21,12 +21,12 @@ const RootLayout = () => {
 
   return (
     <>
+      {isLoading && <Loader />}
       <Navigation />
       <main>
         <Outlet />
       </main>
       <Footer />
-      {isLoading && <Loader />}
     </>
   );
 };

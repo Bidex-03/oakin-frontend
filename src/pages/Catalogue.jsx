@@ -30,7 +30,7 @@ const Catalogue = () => {
             </p>
             <Link
               to="/catalogue/2"
-              className="mt-4 flex gap-8 rounded-full border-2 border-white px-4 py-6 text-3xl w-[55%] md:w-[18%]"
+              className="mt-4 flex w-[55%] gap-8 rounded-full border-2 border-white px-4 py-6 text-3xl md:w-[18%]"
             >
               View Kitchen sets
               <span>
@@ -48,7 +48,7 @@ const Catalogue = () => {
         {isLoading && <Loader />}
 
         {/* Mapped out the CATEGORIES fetched from the API */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="grid grid-cols-1 gap-8 text-center md:grid-cols-3">
           {categories.map((category) => (
             <Link to={`/catalogue/${category.categoryId}`} key={category._id}>
               <CatalogueItem category={category} />

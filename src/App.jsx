@@ -1,12 +1,14 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import RootLayout from './pages/RootLayout';
-import Home from './pages/Home';
-import Offers from './pages/Offers';
-import Catalogue, { loader as catalogueLoader } from './pages/Catalogue';
-import Contact from './pages/Contact';
-import Error from './components/Error';
-import CategoryPage, {loader as categoryPageLoader} from "./pages/CategoryPage";
+import RootLayout from "./pages/RootLayout";
+import Home from "./pages/Home";
+import Offers from "./pages/Offers";
+import Catalogue, { loader as catalogueLoader } from "./pages/Catalogue";
+import Contact from "./pages/Contact";
+import Error from "./components/Error";
+import CategoryPage, {
+  loader as categoryPageLoader,
+} from "./pages/CategoryPage";
 
 // import CategoryPage from './pages/CategoryPage';
 
@@ -17,11 +19,11 @@ const router = createBrowserRouter([
 
     children: [
       {
-        path: '/',
+        path: "/",
         element: <Home />,
       },
       {
-        path: '/catalogue',
+        path: "/catalogue",
         element: <Catalogue />,
         loader: catalogueLoader,
         children: [
@@ -32,17 +34,17 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: '/catalogue/:categoryId',
+        path: "/catalogue/:categoryId",
         element: <CategoryPage />,
         loader: categoryPageLoader,
       },
       {
-        path: '/offers',
+        path: "/offers",
         element: <Offers />,
       },
 
       {
-        path: '/contact',
+        path: "/contact",
         element: <Contact />,
       },
     ],

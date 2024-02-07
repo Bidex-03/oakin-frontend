@@ -41,7 +41,7 @@ const Navigation = () => {
 
   return (
     <header>
-      <nav className="flex justify-between items-center px-6 py-4">
+      <nav className="flex items-center justify-between px-6 py-4">
         {/* LOGO */}
         <div className="text-6xl font-semibold tracking-[2px]">
           <Link to="/" className="font-[Afterglow]">
@@ -53,7 +53,7 @@ const Navigation = () => {
         <ul
           className={`font-[Inter] text-3xl  ${
             isOpen ? "flex flex-col bg-[#333] text-[#fff]" : "hidden md:flex"
-          } md:items-center md:gap-[5rem] gap-4 absolute z-0 md:static left-0 top-[6rem] w-full md:w-auto p-4`}
+          } absolute left-0 top-[6rem] z-0 w-full gap-4 p-4 md:static md:w-auto md:items-center md:gap-[5rem]`}
         >
           {Links.map((link, i) => (
             <li key={i}>
@@ -78,7 +78,7 @@ const Navigation = () => {
         </div>
 
         {/* TOGGLEICONS */}
-        <div onClick={toggleMenu} className="md:hidden cursor-pointer">
+        <div onClick={toggleMenu} className="cursor-pointer md:hidden">
           {isOpen ? (
             <LiaTimesSolid color="#000" size={25} />
           ) : (

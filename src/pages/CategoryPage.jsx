@@ -22,7 +22,7 @@ function CategoryPage() {
           className="h-screen w-full object-cover"
         />
 
-        <h2 className="absolute top-[10%] left-[1%] text-[#333] font-semibold text-6xl">
+        <h2 className="absolute left-[1%] top-[10%] text-6xl font-semibold text-[#333]">
           Living Room
         </h2>
       </span>
@@ -34,13 +34,13 @@ function CategoryPage() {
         {/* Mapped out the PRODUCTS based on the selected CATEGORY fetched from the API */}
         {/* Might remove this div later */}
         <div>
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left text-[#333] my-8">
+          <ul className="my-8 grid grid-cols-1 gap-10 text-left text-[#333] md:grid-cols-3">
             {products.map((product) => (
               <li key={product._id}>
                 <img src={product.image} />
-                <h2 className="text-3xl font-medium my-4">{product.name}</h2>
-                <p className="text-2xl font-mono">{product.description}</p>
-                <div className="flex justify-between items-center text-3xl font-serif mt-4">
+                <h2 className="my-4 text-3xl font-medium">{product.name}</h2>
+                <p className="font-mono text-2xl">{product.description}</p>
+                <div className="mt-4 flex items-center justify-between font-serif text-3xl">
                   <p>${product.price}</p>
                   <button>
                     <CiHeart color="#ff0000" size={25} />

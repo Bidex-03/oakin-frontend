@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <section className="mt-4">
       <div className="mb-4">
-        <h1 className="flex justify-center text-center text-[18px] md:text-5xl font-medium text-[#333] lg:text-6xl">
+        <h1 className="flex justify-center text-center text-[18px] font-medium text-[#333] md:text-5xl lg:text-6xl">
           Classy and comfy furniture for Your Family
         </h1>
       </div>
@@ -46,10 +46,13 @@ const Home = () => {
           <h2 className="text-4xl font-semibold uppercase lg:text-8xl">
             Kitchen Set
           </h2>
-          <p className="mt-4 mb-5 text-4xl">
+          <p className="mb-5 mt-4 text-4xl">
             Checkout our latest and trendy kitchen furniture set
           </p>
-          <Link to={`/catalogue/2`} className="flex justify-between items-center text-center gap-8 rounded-[10px] border-2 border-[#333] p-8 text-4xl font-medium w-[80%] md:w-[70%]">
+          <Link
+            to={`/catalogue/2`}
+            className="flex w-[80%] items-center justify-between gap-8 rounded-[10px] border-2 border-[#333] p-8 text-center text-4xl font-medium md:w-[70%]"
+          >
             View Kitchen Set
             <span>
               <BsArrowRightCircle size={25} />
