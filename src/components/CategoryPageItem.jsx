@@ -13,6 +13,8 @@ const CategoryPageItem = ({ product }) => {
     const newItem = {
       id: _id,
       name,
+      image,
+      description,
       quantity: 1,
       price,
       totalPrice: price * 1,

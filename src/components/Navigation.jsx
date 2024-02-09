@@ -73,16 +73,14 @@ const Navigation = () => {
           <span>
             <AiOutlineSearch color="#000" size={25} />
           </span>
-          <span>
-            <Link to="/cart" className="relative">
+            <NavLink to="/cart" className="relative">
               <FaShoppingCart color="#000" size={25} />
               {totalCartQuantity ? (
                 <p className="absolute -right-3 -top-4 rounded-full bg-stone-300 px-3 py-1 text-lg font-medium text-[#333]">
                   {totalCartQuantity}
                 </p>
               ) : null}
-            </Link>
-          </span>
+            </NavLink>
           <span>
             <BiSolidUser color="#000" size={25} />
           </span>

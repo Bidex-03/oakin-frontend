@@ -24,12 +24,14 @@ const cartSlice = createSlice({
     },
     deleteItem(state, action) {
       // payload = _id
-      state.cart = state.cart.filter((item) => item._id !== action.payload);
+      state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
     updateItem(state, action) {},
     increaseItem(state, action) {},
     decreaseItem(state, action) {},
-    clearCart(state, action) {},
+    clearCart(state, action) {
+      state.cart = [];
+    },
   },
 });
 
