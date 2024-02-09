@@ -9,8 +9,7 @@ import Error from "./components/Error";
 import CategoryPage, {
   loader as categoryPageLoader,
 } from "./pages/CategoryPage";
-
-// import CategoryPage from './pages/CategoryPage';
+import Cart from "./pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -26,12 +25,6 @@ const router = createBrowserRouter([
         path: "/catalogue",
         element: <Catalogue />,
         loader: catalogueLoader,
-        children: [
-          // {
-          //   path: "/catalogue/:categoryId",
-          //   element: <CategoryPage />,
-          // },
-        ],
       },
       {
         path: "/catalogue/:categoryId",
@@ -47,6 +40,10 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
+      {
+        path: "/cart",
+        element: <Cart />
+      }
     ],
   },
 ]);

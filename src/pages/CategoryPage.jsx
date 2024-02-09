@@ -1,11 +1,10 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { getProductsByCategoryID } from "../services/apiProducts";
-import { CiHeart } from "react-icons/ci";
-import { FaRegHeart } from "react-icons/fa";
-
 import image__1 from "../assets/image-2.jpg";
+import CategoryPageItem from "../components/CategoryPageItem";
 
 function CategoryPage() {
+
   const products = useLoaderData();
   console.log(products);
 
@@ -36,18 +35,7 @@ function CategoryPage() {
         <div>
           <ul className="my-8 grid grid-cols-1 gap-10 text-left text-[#333] md:grid-cols-3">
             {products.map((product) => (
-              <li key={product._id}>
-                <img src={product.image} />
-                <h2 className="my-4 text-3xl font-medium">{product.name}</h2>
-                <p className="font-mono text-2xl">{product.description}</p>
-                <div className="mt-4 flex items-center justify-between font-serif text-3xl">
-                  <p>${product.price}</p>
-                  <button>
-                    <CiHeart color="#ff0000" size={25} />
-                    {/* <FaRegHeart color="#ff0000" size={25} /> */}
-                  </button>
-                </div>
-              </li>
+              <CategoryPageItem product={product} key={product._id} />
             ))}
           </ul>
         </div>

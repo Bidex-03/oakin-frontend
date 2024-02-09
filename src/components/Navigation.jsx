@@ -5,9 +5,13 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
 import { BiSolidUser, BiMenuAltRight } from "react-icons/bi";
 import { LiaTimesSolid } from "react-icons/lia";
+import { useSelector } from "react-redux";
+import { getTotalCartQuantity } from "../slices/CartSlice";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const totalCartQuantity = useSelector(getTotalCartQuantity);
 
   const Links = [
     {
@@ -70,7 +74,14 @@ const Navigation = () => {
             <AiOutlineSearch color="#000" size={25} />
           </span>
           <span>
-            <FaShoppingCart color="#000" size={25} />
+            <Link to="/cart" className="relative">
+              <FaShoppingCart color="#000" size={25} />
+              {totalCartQuantity ? (
+                <p className="absolute -right-3 -top-4 rounded-full bg-stone-300 px-3 py-1 text-lg font-medium text-[#333]">
+                  {totalCartQuantity}
+                </p>
+              ) : null}
+            </Link>
           </span>
           <span>
             <BiSolidUser color="#000" size={25} />
