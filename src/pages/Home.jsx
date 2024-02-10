@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-
-// import SwiperComp from "../components/SwiperComp";
-// import ImageSlider from "../components/ImageSlider";
 import SwiperSlider from "../components/SwiperSlider";
 import { BsArrowRightCircle } from "react-icons/bs";
 
@@ -22,7 +19,6 @@ const Home = () => {
           src={Home_Image}
           alt="Family Living room"
           className="object-contain md:w-full md:object-cover lg:h-[73vh]"
-          // className="h-screen w-full object-cover"
         />
       </div>
 

@@ -1,17 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  cart: [],
-
-  //   cart: [
-  //     {
-  //       _id: 123456,
-  //       name: "Living room sofa",
-  //       quantity: 2,
-  //       price: 100,
-  //       totalPrice: 200,
-  //     },
-  //   ],
+  cart: [], // check the redux devtools to see how the the cart structure looks like
 };
 
 const cartSlice = createSlice({
@@ -26,9 +16,22 @@ const cartSlice = createSlice({
       // payload = _id
       state.cart = state.cart.filter((item) => item.id !== action.payload);
     },
-    updateItem(state, action) {},
-    increaseItem(state, action) {},
-    decreaseItem(state, action) {},
+    increaseItemQuantity(state, action) {
+      // payload = _id
+      const item = state.cart.find((item) => item.id === action.payload);
+
+      item.quantity++;
+      item.totalPrice = item.quantity * item.price;
+    },
+    decreaseItemQuantity(state, action) {
+      // payload = _id
+      const item = state.cart.find((item) => item.id === action.payload);
+
+      item.quantity--;
+      item.totalPrice = item.quantity * item.price;
+
+      if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action);
+    },
     clearCart(state, action) {
       state.cart = [];
     },
@@ -38,9 +41,8 @@ const cartSlice = createSlice({
 export const {
   addItem,
   deleteItem,
-  updateItem,
-  increaseItem,
-  decreaseItem,
+  increaseItemQuantity,
+  decreaseItemQuantity,
   clearCart,
 } = cartSlice.actions;
 
@@ -53,5 +55,8 @@ export const getTotalCartQuantity = (state) =>
 
 export const getTotalCartPrice = (state) =>
   state.cart.cart.reduce((sum, item) => sum + item.totalPrice, 0);
+
+export const getCurrentQuantityById = (id) => (state) =>
+  state.cart.cart.find((item) => item.id === id)?.quantity ?? 0;
 
 // look into "reselect library" === it helps in optimizing useSelector() performance issues

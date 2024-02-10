@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -10,6 +10,7 @@ import { getTotalCartQuantity } from "../slices/CartSlice";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [shadow, setShadow] = useState(false);
 
   const totalCartQuantity = useSelector(getTotalCartQuantity);
 
@@ -32,6 +33,7 @@ const Navigation = () => {
     },
   ];
 
+  // TOGGLE MENU BAR AND TIMES ICON
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -43,8 +45,22 @@ const Navigation = () => {
     }
   };
 
+  // HANDLE ONSCROLL BACKGROUND
+  useEffect(() => {
+    const handleShadow = () => {
+      if (window.scrollY >= 100) {
+        setShadow(true);
+      } else {
+        setShadow(false);
+      }
+    };
+    window.addEventListener("scroll", handleShadow);
+  }, []);
+
   return (
-    <header>
+    <header
+      className={shadow ? "fixed z-[100] w-full bg-[#333] text-white" : ""}
+    >
       <nav className="flex items-center justify-between px-6 py-4">
         {/* LOGO */}
         <div className="text-6xl font-semibold tracking-[2px]">
@@ -71,27 +87,27 @@ const Navigation = () => {
         {/* ICONS */}
         <div className="flex items-center gap-6">
           <span>
-            <AiOutlineSearch color="#000" size={25} />
+            <AiOutlineSearch color={shadow ? "#fff" : "#333"} size={25} />
           </span>
-            <NavLink to="/cart" className="relative">
-              <FaShoppingCart color="#000" size={25} />
-              {totalCartQuantity ? (
-                <p className="absolute -right-3 -top-4 rounded-full bg-stone-300 px-3 py-1 text-lg font-medium text-[#333]">
-                  {totalCartQuantity}
-                </p>
-              ) : null}
-            </NavLink>
+          <NavLink to="/cart" className="relative">
+            <FaShoppingCart color={shadow ? "#fff" : "#333"} size={25} />
+            {totalCartQuantity ? (
+              <p className="absolute -right-3 -top-4 rounded-full bg-stone-300 px-3 py-1 text-xl font-semibold text-[#333]">
+                {totalCartQuantity}
+              </p>
+            ) : null}
+          </NavLink>
           <span>
-            <BiSolidUser color="#000" size={25} />
+            <BiSolidUser color={shadow ? "#fff" : "#333"} size={25} />
           </span>
         </div>
 
         {/* TOGGLEICONS */}
         <div onClick={toggleMenu} className="cursor-pointer md:hidden">
           {isOpen ? (
-            <LiaTimesSolid color="#000" size={25} />
+            <LiaTimesSolid color={shadow ? "#fff" : "#333"} size={25} />
           ) : (
-            <BiMenuAltRight color="#000" size={25} />
+            <BiMenuAltRight color={shadow ? "#fff" : "#333"} size={25} />
           )}
         </div>
       </nav>
