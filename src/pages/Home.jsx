@@ -7,7 +7,8 @@ import Kitchen_Image from "../assets/image-3.jpg";
 
 const Home = () => {
   return (
-    <section className="mt-4">
+    // <section className="mt-4">
+    <section className="">
       <div className="mb-4">
         <h1 className="flex justify-center text-center text-[18px] font-medium text-[#333] md:text-5xl lg:text-6xl">
           Classy and comfy furniture for Your Family

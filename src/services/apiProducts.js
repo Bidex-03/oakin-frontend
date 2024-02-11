@@ -19,6 +19,20 @@ export async function getCategories() {
   }
 }
 
+export async function getCategoryByID(categoryId) {
+  try {
+    const response = await fetch(`/api/categories/${categoryId}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch category: ${response.statusText}`);
+    }
+    const category = await response.json();
+    return category;
+  } catch (error) {
+    console.log("Error fetching category:", error);
+    throw error;
+  }
+}
+
 // function to get all the PRODUCTS under a CATEGORY
 export async function getProductsByCategoryID(categoryId) {
   try {
