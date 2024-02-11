@@ -4,8 +4,16 @@ import CategoryPageItem from "../components/CategoryPageItem";
 
 function CategoryPage() {
   const categoryDetails = useLoaderData();
-  const products = categoryDetails.products;
-  const category = categoryDetails.category;
+
+  if (!categoryDetails) {
+    return <div>Loading...</div>;
+  }
+
+  const { category, products, error } = categoryDetails;
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <div>
@@ -39,16 +47,18 @@ function CategoryPage() {
 
 export async function loader({ params }) {
   const categoryId = params.categoryId;
-  console.log("categoryId:", categoryId);
 
-  // Fetch category details and products together
-  const [category, products] = await Promise.all([
-    getCategoryByID(categoryId),
-    getProductsByCategoryID(categoryId)
-  ]);
+  try {
+    const [category, products] = await Promise.all([
+      getCategoryByID(categoryId),
+      getProductsByCategoryID(categoryId)
+    ]);
 
-  // Return an object containing both category and products
-  return { category, products };
+    return { category, products };
+  } catch (error) {
+    console.error("Error fetching category and products:", error);
+    return { error };
+  }
 }
 
 export default CategoryPage;
