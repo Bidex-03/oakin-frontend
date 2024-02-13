@@ -21,11 +21,11 @@ export async function getCategories() {
 
 export async function getCategoryByID(categoryId) {
   try {
-    const response = await fetch(`/api/categories/${categoryId}`);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch category: ${response.statusText}`);
+    const res = await fetch(`/api/categories/${categoryId}`);
+    if (!res.ok) {
+      throw new Error(`Failed to fetch category: ${res.statusText}`);
     }
-    const category = await response.json();
+    const category = await res.json();
     return category;
   } catch (error) {
     console.log("Error fetching category:", error);

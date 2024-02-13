@@ -17,7 +17,7 @@ import slide_image_3 from "../assets/slider-3.jpg";
 import slide_image_4 from "../assets/slider-4.jpg";
 import slide_image_5 from "../assets/slider-5.jpg";
 
-export default function App() {
+export default function SwiperSlider() {
   return (
     <>
       <Swiper

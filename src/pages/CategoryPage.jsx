@@ -3,7 +3,7 @@ import {
   getCategoryByID,
   getProductsByCategoryID,
 } from "../services/apiProducts";
-// import image__1 from "../assets/image-2.jpg";
+import image__1 from "../assets/image-2.jpg";
 import CategoryPageItem from "../components/CategoryPageItem";
 import { useEffect, useState } from "react";
 
@@ -40,21 +40,22 @@ function CategoryPage() {
       {/* <img src={category.image} alt={`${category.categoryId} image`} /> */}
       <span className="relative -z-10">
         <img
-          // src={image__1}
-          src={category ? category.image : ""}
+          src={image__1}
+          // src={category ? category.image : ""}
           alt="Background image"
           className="h-screen w-full object-cover"
         />
 
         <h2 className="absolute left-[1%] top-[10%] text-6xl font-semibold text-[#333]">
-          {/* {category.categoryId} */}
-          {category ? category.name : "Loading"}
+          {categoryId}
+          {/* {category ? category.name : "Loading"} */}
         </h2>
       </span>
 
       <section className="px-10 py-8">
         <h2 className="text-4xl font-medium">
-          Available {category ? category.name : "Loading..."} furnitures
+          {/* Available {category ? category.name : "Loading..."} furnitures */}
+          Available {categoryId} furnitures
         </h2>
         {/* Mapped out the PRODUCTS based on the selected CATEGORY fetched from the API */}
         {/* Might remove this div later */}
