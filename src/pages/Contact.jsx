@@ -92,7 +92,7 @@ const Contact = () => {
           className="h-full w-full object-cover"
         />
         <span className="bg-black-100 absolute bottom-0 flex h-full w-full items-center justify-center opacity-100 backdrop-blur-sm">
-          <h2 className="font-[Afterglow] text-8xl font-semibold text-white">
+          <h2 className="afterglow text-8xl font-semibold text-white">
             Oakin
           </h2>
 

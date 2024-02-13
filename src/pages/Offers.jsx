@@ -52,7 +52,7 @@ const Offers = () => {
 
       {/* BALCONY REDIRECT SECTION */}
       <div className="mt-[5rem] flex flex-col justify-center gap-[2rem] md:gap-[5rem] md:flex-row">
-        <img src={balcony} alt="Balcony furniture" className="h-96" />
+        <img src={balcony} alt="Balcony furniture" className="h-[35rem]" />
 
         <div className="flex flex-col justify-center">
           <h2 className="text-4xl md:text-5xl font-medium uppercase text-[#333]">

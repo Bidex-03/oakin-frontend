@@ -7,8 +7,7 @@ import Kitchen_Image from "../assets/image-3.jpg";
 
 const Home = () => {
   return (
-    // <section className="mt-4">
-    <section className="">
+    <section>
       <div className="mb-4">
         <h1 className="flex justify-center text-center text-[18px] font-medium text-[#333] md:text-5xl lg:text-6xl">
           Classy and comfy furniture for Your Family
@@ -35,25 +34,25 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="my-[4rem] flex w-[100%] flex-col gap-[5rem] pl-[5rem] md:flex-row">
-        <div className="w-[90%] lg:w-[40%]">
-          <img src={Kitchen_Image} />
-        </div>
-        <div className="w-[90%] lg:w-[35%]">
-          <h2 className="text-4xl font-semibold uppercase lg:text-8xl">
-            Kitchen Set
+      <div className="mx-6 my-[5rem] flex flex-col justify-center gap-[2rem] md:flex-row md:gap-[5rem]">
+        <img
+          src={Kitchen_Image}
+          alt="Kitchen furniture"
+          className="h-[35rem]"
+        />
+
+        <div className="flex flex-col justify-center">
+          <h2 className="text-4xl font-medium uppercase text-[#333] md:text-5xl">
+            Kitchen set
           </h2>
-          <p className="mb-5 mt-4 text-4xl">
-            Checkout our latest and trendy kitchen furniture set
+          <p className="my-7 text-2xl md:text-3xl">
+            Checkout our latest and trendy Kitchen furniture set.
           </p>
           <Link
-            to={`/catalogue/2`}
-            className="flex w-[80%] items-center justify-between gap-8 rounded-[10px] border-2 border-[#333] p-8 text-center text-4xl font-medium md:w-[70%]"
+            to="/catalogue/5"
+            className="flex gap-4 rounded-sm border-2 border-[#333] px-6 py-6 text-3xl capitalize md:w-[70%]"
           >
-            View Kitchen Set
-            <span>
-              <BsArrowRightCircle size={25} />
-            </span>
+            View Kitchen furniture <BsArrowRightCircle size={25} />
           </Link>
         </div>
       </div>

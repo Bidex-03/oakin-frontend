@@ -64,7 +64,7 @@ const Navigation = () => {
       <nav className="flex items-center justify-between px-6 py-4">
         {/* LOGO */}
         <div className="text-6xl font-semibold tracking-[2px]">
-          <Link to="/" className="font-[Afterglow]">
+          <Link to="/" className="afterglow">
             Oakin
           </Link>
         </div>
@@ -89,6 +89,7 @@ const Navigation = () => {
           <span>
             <AiOutlineSearch color={shadow ? "#fff" : "#333"} size={25} />
           </span>
+
           <NavLink to="/cart" className="relative">
             <FaShoppingCart color={shadow ? "#fff" : "#333"} size={25} />
             {totalCartQuantity ? (
@@ -97,9 +98,10 @@ const Navigation = () => {
               </p>
             ) : null}
           </NavLink>
-          <span>
+
+          <NavLink to="/account">
             <BiSolidUser color={shadow ? "#fff" : "#333"} size={25} />
-          </span>
+          </NavLink>
         </div>
 
         {/* TOGGLEICONS */}

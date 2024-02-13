@@ -10,6 +10,7 @@ import CategoryPage, {
   loader as categoryPageLoader,
 } from "./pages/CategoryPage";
 import Cart from "./pages/Cart";
+import Account from "./pages/Account";
 
 const router = createBrowserRouter([
   {
@@ -42,8 +43,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />
-      }
+        element: <Cart />,
+      },
+      {
+        path: "/account",
+        element: <Account />,
+      },
     ],
   },
 ]);

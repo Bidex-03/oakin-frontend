@@ -34,7 +34,7 @@ const Footer = () => {
       <section className="flex md:flex-row flex-col items-start justify-between text-[#fff]">
         {/* LOGO et SOCIALS */}
         <div className="mb-10 lg:mb-0">
-          <span className="font-[Afterglow] font-semibold tracking-[3px] text-7xl lg:text-[7rem]">
+          <span className="afterglow font-semibold tracking-[3px] text-7xl lg:text-[7rem]">
             Oakin
           </span>
           <p className="text-5xl my-12 lg:my-4 ">Follow us</p>
