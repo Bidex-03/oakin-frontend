@@ -17,19 +17,19 @@ const Navigation = () => {
   const Links = [
     {
       name: "Home",
-      link: "/",
+      link: "/app/home",
     },
     {
       name: "Catalogue",
-      link: "/catalogue",
+      link: "/app/catalogue",
     },
     {
       name: "Offers",
-      link: "/offers",
+      link: "/app/offers",
     },
     {
       name: "Contact",
-      link: "/contact",
+      link: "/app/contact",
     },
   ];
 
@@ -64,7 +64,7 @@ const Navigation = () => {
       <nav className="flex items-center justify-between px-6 py-4">
         {/* LOGO */}
         <div className="text-6xl font-semibold tracking-[2px]">
-          <Link to="/" className="afterglow">
+          <Link to="/app/home" className="afterglow">
             Oakin
           </Link>
         </div>
@@ -90,7 +90,7 @@ const Navigation = () => {
             <AiOutlineSearch color={shadow ? "#fff" : "#333"} size={25} />
           </span>
 
-          <NavLink to="/cart" className="relative">
+          <NavLink to="/app/cart" className="relative">
             <FaShoppingCart color={shadow ? "#fff" : "#333"} size={25} />
             {totalCartQuantity ? (
               <p className="absolute -right-3 -top-4 rounded-full bg-stone-300 px-3 py-1 text-xl font-semibold text-[#333]">
@@ -99,7 +99,7 @@ const Navigation = () => {
             ) : null}
           </NavLink>
 
-          <NavLink to="/account">
+          <NavLink to="/app/account">
             <BiSolidUser color={shadow ? "#fff" : "#333"} size={25} />
           </NavLink>
         </div>

@@ -84,7 +84,7 @@ const Contact = () => {
   const didSubmitStatus = <p>Done ✔✅</p>;
 
   return (
-    <main className="flex flex-col bg-[#f8f4f4] md:h-[90vh] md:flex-row">
+    <main className="relative -z-10 flex flex-col bg-[#f8f4f4] md:h-[90vh] md:flex-row">
       <section className="group relative w-[100%] object-cover">
         <img
           src={image}
@@ -92,9 +92,7 @@ const Contact = () => {
           className="h-full w-full object-cover"
         />
         <span className="bg-black-100 absolute bottom-0 flex h-full w-full items-center justify-center opacity-100 backdrop-blur-sm">
-          <h2 className="afterglow text-8xl font-semibold text-white">
-            Oakin
-          </h2>
+          <h2 className="afterglow text-8xl font-semibold text-white">Oakin</h2>
 
           <div className="absolute bottom-5 hidden flex-col gap-5 text-white md:flex">
             <p className="text-4xl">Follow Us</p>

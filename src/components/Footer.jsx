@@ -10,19 +10,19 @@ const Footer = () => {
   const Links = [
     {
       name: "Home",
-      link: "/",
+      link: "/app/home",
     },
     {
       name: "Catalogue",
-      link: "/catalogue",
+      link: "/app/catalogue",
     },
     {
       name: "Offers",
-      link: "/offers",
+      link: "/app/offers",
     },
     {
       name: "Contact",
-      link: "/contact",
+      link: "/app/contact",
     },
   ];
 

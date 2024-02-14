@@ -5,8 +5,14 @@ import { BiSupport } from "react-icons/bi";
 import { FaLock } from "react-icons/fa";
 import { FaUsers } from "react-icons/fa6";
 import { FiLogOut } from "react-icons/fi";
+import { useSelector } from "react-redux";
+
+// const user = "https://i.pravatar.cc/48?u=933372";
 
 const Account = () => {
+  const name = useSelector((state) => state.user.username);
+  const mail = useSelector((state) => state.user.mail);
+
   return (
     <main className="p-8">
       <section className="flex flex-col md:flex-row">
@@ -17,8 +23,12 @@ const Account = () => {
         {/* USERNAME AND USER MAIL */}
         <div className="mt-5 flex w-full flex-col justify-between text-[#333] md:mt-0 md:flex-row md:items-center">
           <span>
-            <h3 className="text-8xl font-medium">Abdullah</h3>
-            <p className="mt-5 text-4xl">abdullahqaasim14@gmail.com</p>
+            <h3 className="text-4xl font-medium capitalize md:text-8xl">
+              {name ? name : "Testing"}
+            </h3>
+            <p className="text-4xl lowercase">
+              {mail ? mail : "anonymous@gmail.com"}
+            </p>
           </span>
           <button className="mt-4 rounded-md border border-[#333] px-[6rem] py-[2rem] text-3xl font-medium md:mt-0">
             Edit Profile
