@@ -5,14 +5,14 @@ const Signup = () => {
     <main className="flex flex-col md:flex-row">
       <section className="group relative basis-1/2">
         <img src={image} alt="Image" className="h-screen w-full object-cover" />
-        <span className="absolute bottom-0 flex h-full w-full bg-black/50 pl-10 pt-10 opacity-100 backdrop-blur-sm">
-          <h2 className="afterglow text-8xl text-white">Oakin</h2>
+        <span className="absolute bottom-0 flex h-full w-full bg-black/20 md:bg-black/50 pl-10 pt-10 md:opacity-100 md:backdrop-blur-sm">
+          <h2 className="afterglow text-4xl text-[#fff] md:text-white md:text-8xl">Oakin</h2>
         </span>
       </section>
 
-      <section className="flex basis-1/2 items-center justify-center py-10 md:py-0">
+      <section className="absolute inset-0 mx-10 my-[20%] flex basis-1/2 items-center justify-center rounded-md bg-white/40 py-10 backdrop-blur-sm md:static md:m-0 md:py-0 md:backdrop-blur-0">
         <div className="w-[90%] md:w-[60%]">
-          <h2 className="text-5xl font-medium">Create an Account</h2>
+          <h2 className="text-3xl text-[#333] md:text-5xl font-medium">Create an Account</h2>
 
           {/* LOGIN FORM FIELD */}
           <form className="mt-8">
@@ -54,7 +54,7 @@ const Signup = () => {
 
             <button
               disabled
-              className="mt-8 w-full rounded-sm bg-[#333] py-6 text-4xl text-white"
+              className="mt-8 w-full rounded-sm bg-[#333] py-6 text-3xl md:text-4xl text-white"
             >
               Create Account
             </button>

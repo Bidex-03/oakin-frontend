@@ -24,15 +24,19 @@ const Login = () => {
     <main className="flex flex-col md:flex-row">
       <section className="group relative basis-1/2">
         <img src={image} alt="Image" className="h-screen w-full object-cover" />
-        <span className="absolute bottom-0 flex h-full w-full bg-black/50 pl-10 pt-10 opacity-100 backdrop-blur-sm">
-          <h2 className="afterglow text-8xl text-white">Oakin</h2>
+        <span className="absolute bottom-0 flex h-full w-full bg-black/20 md:bg-black/50 pl-10 pt-10 md:opacity-100 md:backdrop-blur-sm">
+          <h2 className="afterglow text-4xl text-[#fff] md:text-white md:text-8xl">Oakin</h2>
         </span>
       </section>
 
-      <section className="flex basis-1/2 items-center justify-center py-10 md:py-0">
+      <section className="absolute inset-0 mx-10 my-[20%] flex basis-1/2 items-center justify-center bg-white/40 rounded-md py-10 backdrop-blur-sm md:static md:m-0 md:py-0 md:backdrop-blur-0">
         <div className="w-[90%] md:w-[60%]">
-          <h2 className="text-5xl font-medium">Welcome back!</h2>
-          <h3 className="text-4xl font-medium">Login to continue</h3>
+          <div className="text-[#333]">
+            <h2 className="text-2xl font-medium md:text-5xl">Welcome back!</h2>
+            <h3 className="text-xl font-medium md:text-4xl">
+              Login to continue
+            </h3>
+          </div>
 
           {/* LOGIN FORM FIELD */}
           <form className="mt-8" onSubmit={handleSubmit}>
@@ -85,8 +89,8 @@ const Login = () => {
           </form>
 
           {/* FORGOT PASSWORD? ET DON'T HAVE AN ACCOUNT? */}
-          <div className="flex cursor-pointer justify-between text-lg underline">
-            <Link to="/signup">Don't have an account?</Link>
+          <div className="flex cursor-pointer justify-between text-lg underline text-[#333]">
+            {/* <Link to="/signup">Don't have an account?</Link> */}
 
             <Link to="/">Forgot password?</Link>
           </div>
