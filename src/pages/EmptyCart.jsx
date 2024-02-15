@@ -7,7 +7,7 @@ const EmptyCart = () => {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <div>
-        <img src={cart_image} className="" />
+        <img src={cart_image} />
 
         <div className="mt-8 text-center">
           <p className="text-4xl font-medium text-[#333]">
@@ -16,7 +16,7 @@ const EmptyCart = () => {
           <p className="text-3xl text-stone-500">but it doesn't have to be.</p>
 
           <button
-            onClick={() => navigate("/catalogue")}
+            onClick={() => navigate("/app/catalogue")}
             className="mt-8 rounded-full bg-[#333] px-12 py-5 text-3xl font-medium text-stone-100 hover:bg-[#474747]"
           >
             SHOP NOW

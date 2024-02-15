@@ -6,6 +6,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import useInput from "../hooks/use-input";
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // REGEX SYNTAX TO VALIDATE THE INPUTS
 const emailRegex = /^([a-z\d.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/;
@@ -72,7 +73,7 @@ const Contact = () => {
     setIsSubmitting(false);
     setDidSubmit(true);
 
-    // alert("Submitted successfully");
+    alert("Submitted successfully");
     console.log(enteredEmail);
     console.log(enteredMessage);
 
@@ -98,9 +99,15 @@ const Contact = () => {
             <p className="text-4xl">Follow Us</p>
 
             <span className="flex items-center gap-8">
-              <BsInstagram size={25} />
-              <FaXTwitter size={25} />
-              <FiFacebook size={25} />
+              <Link to="https://www.instagram.com/dreal_devabdullah/?hl=en">
+                <BsInstagram color="#fff" size={25} />
+              </Link>
+              <Link to="https://twitter.com/QaasimAbdullah4">
+                <FaXTwitter color="#fff" size={25} />
+              </Link>
+              <Link to="https://web.facebook.com/abdullahharbydeyme.qaasim/">
+                <FiFacebook color="#fff" size={25} />
+              </Link>
             </span>
 
             <div className="flex gap-6">
@@ -125,7 +132,7 @@ const Contact = () => {
         </span>
       </section>
 
-      <section className="w-full px-[3rem] py-[8rem] md:px-[8rem]">
+      <section className="w-full px-[3rem] py-[8rem] md:px-[8rem] text-[#333]">
         <h2 className="text-5xl font-medium">Leave Us a Message</h2>
         <form
           ref={formRef}

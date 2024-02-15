@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { BsInstagram, BsTelephone } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
@@ -26,44 +26,44 @@ const Footer = () => {
     },
   ];
 
-   const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   return (
     <footer className="bg-[#333] px-6 py-4">
       {/* TOP */}
-      <section className="flex md:flex-row flex-col items-start justify-between text-[#fff]">
+      <section className="flex flex-col items-start justify-between text-[#fff] md:flex-row">
         {/* LOGO et SOCIALS */}
         <div className="mb-10 lg:mb-0">
-          <span className="afterglow font-semibold tracking-[3px] text-7xl lg:text-[7rem]">
+          <span className="afterglow text-7xl font-semibold tracking-[3px] lg:text-[7rem]">
             Oakin
           </span>
-          <p className="text-5xl my-12 lg:my-4 ">Follow us</p>
+          <p className="my-12 text-5xl lg:my-4 ">Follow us</p>
           <div className="flex justify-between">
-            <span>
+            <Link to="https://www.instagram.com/dreal_devabdullah/?hl=en">
               <BsInstagram color="#fff" size={25} />
-            </span>
-            <span>
+            </Link>
+            <Link to="https://twitter.com/QaasimAbdullah4">
               <FaXTwitter color="#fff" size={25} />
-            </span>
-            <span>
+            </Link>
+            <Link to="https://web.facebook.com/abdullahharbydeyme.qaasim/">
               <FiFacebook color="#fff" size={25} />
-            </span>
+            </Link>
           </div>
         </div>
 
         {/* CONTACTS */}
         <div className="mb-8 lg:mb-0">
           <p className="mb-6 text-5xl">Contact Us</p>
-          <div className="font-semibold text-2xl">
-            <span className="flex mb-4">
+          <div className="text-2xl font-semibold">
+            <span className="mb-4 flex">
               <AiOutlineMail color="#fff" size={25} />
               <p className="ml-4">oakin@gmail.com</p>
             </span>
-            <span className="flex mb-4">
+            <span className="mb-4 flex">
               <BsTelephone color="#fff" size={25} />
               <p className="ml-4">+234 (0) 807 258 9256</p>
             </span>
-            <span className="flex mb-4">
+            <span className="mb-4 flex">
               <HiOutlineLocationMarker color="#fff" size={25} />
               <p className="ml-4">No 10, Oakin house, Lagos, Nigeria.</p>
             </span>
@@ -72,8 +72,8 @@ const Footer = () => {
 
         {/* NAVIGATION */}
         <div>
-          <h2 className="text-5xl mb-6">Navigation</h2>
-          <ul className="flex flex-col font-semibold text-2xl">
+          <h2 className="mb-6 text-5xl">Navigation</h2>
+          <ul className="flex flex-col text-2xl font-semibold">
             {Links.map((link, i) => (
               <li key={i} className="mb-6">
                 <NavLink to={link.link}>{link.name}</NavLink>
@@ -84,10 +84,10 @@ const Footer = () => {
       </section>
 
       {/* SUPPORT */}
-      <section className="text-center font-semibold text-[#fff] mt-8 text-2xl">
-        <div className="border-b-2 mb-4">
+      <section className="mt-8 text-center text-2xl font-semibold text-[#fff]">
+        <div className="mb-4 border-b-2">
           <h2 className="mb-4">Support</h2>
-          <ul className="flex flex-wrap items-center justify-center mb-4">
+          <ul className="mb-4 flex flex-wrap items-center justify-center">
             <li className="mr-4">Account</li>
             <li className="mr-4">Settings</li>
             <li className="mr-4">Privacy</li>
@@ -96,7 +96,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className="">
-          <p>Copyright@{year} All right reserved</p>
+          <p>Copyright@{year} All rights reserved</p>
         </div>
       </section>
     </footer>

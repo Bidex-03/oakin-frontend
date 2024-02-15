@@ -37,7 +37,7 @@ const Cart = () => {
 
       <section className="mt-10 flex flex-col-reverse justify-between gap-8 md:flex-row md:items-end md:gap-0">
         <Link
-          to="/catalogue"
+          to="/app/catalogue"
           className="rounded-sm border border-[#333] px-8 py-5 text-center text-4xl font-medium"
         >
           Continue Shopping

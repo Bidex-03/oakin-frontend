@@ -62,7 +62,7 @@ const Offers = () => {
             Checkout our latest and trendy Balcony furniture set.
           </p>
           <Link
-            to="/catalogue/5"
+            to="/app/catalogue/5"
             className="flex gap-4 rounded-sm border-2 border-[#333] px-6 py-6 text-3xl capitalize md:w-[70%]"
           >
             View balcony furniture <BsArrowRightCircle size={25} />

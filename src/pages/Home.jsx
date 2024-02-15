@@ -49,7 +49,7 @@ const Home = () => {
             Checkout our latest and trendy Kitchen furniture set.
           </p>
           <Link
-            to="/catalogue/5"
+            to="/app/catalogue/2"
             className="flex gap-4 rounded-sm border-2 border-[#333] px-6 py-6 text-3xl capitalize md:w-[70%]"
           >
             View Kitchen furniture <BsArrowRightCircle size={25} />
