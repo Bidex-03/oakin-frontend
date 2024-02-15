@@ -16,7 +16,7 @@ const Catalogue = () => {
 
   return (
     <main>
-      <section className="relative -z-10">
+      <section>
         <span className="h-100 relative flex">
           <img
             src={kitchen1}
@@ -30,7 +30,7 @@ const Catalogue = () => {
             </p>
             <Link
               to="/app/catalogue/2"
-              className="mt-4 flex w-[55%] gap-8 rounded-full border-2 border-white px-4 py-6 text-3xl md:w-[18%]"
+              className="mt-4 flex w-[75%] gap-8 rounded-full border-2 border-white px-4 py-6 text-3xl md:w-[18%]"
             >
               View Kitchen sets
               <span>

@@ -72,7 +72,7 @@ const Navigation = () => {
         {/* NAVLISTS */}
         <ul
           className={`font-[Inter] text-3xl  ${
-            isOpen ? "flex flex-col bg-[#333] text-[#fff]" : "hidden md:flex"
+            isOpen ? "flex flex-col bg-[#333] text-[#fff] z-10" : "hidden md:flex"
           } absolute left-0 top-[6rem] z-0 w-full gap-4 p-4 md:static md:w-auto md:items-center md:gap-[5rem]`}
         >
           {Links.map((link, i) => (

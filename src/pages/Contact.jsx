@@ -84,7 +84,7 @@ const Contact = () => {
   const didSubmitStatus = <p>Done ✔✅</p>;
 
   return (
-    <main className="relative -z-10 flex flex-col bg-[#f8f4f4] md:h-[90vh] md:flex-row">
+    <main className="flex flex-col bg-[#f8f4f4] md:h-[90vh] md:flex-row">
       <section className="group relative w-[100%] object-cover">
         <img
           src={image}

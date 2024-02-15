@@ -17,7 +17,7 @@ const Offers = () => {
         </h2>
       </div>
 
-      <div className="h-100 group relative flex">
+      <div className="h-100 group relative -z-10 flex">
         <img
           src={bedroom}
           alt="Kitchen interior"
@@ -51,11 +51,11 @@ const Offers = () => {
       </div>
 
       {/* BALCONY REDIRECT SECTION */}
-      <div className="mt-[5rem] flex flex-col justify-center gap-[2rem] md:gap-[5rem] md:flex-row">
+      <div className="mt-[5rem] flex flex-col justify-center gap-[2rem] md:flex-row md:gap-[5rem]">
         <img src={balcony} alt="Balcony furniture" className="h-[35rem]" />
 
         <div className="flex flex-col justify-center">
-          <h2 className="text-4xl md:text-5xl font-medium uppercase text-[#333]">
+          <h2 className="text-4xl font-medium uppercase text-[#333] md:text-5xl">
             Balcony set
           </h2>
           <p className="my-7 text-2xl md:text-3xl">
@@ -63,7 +63,7 @@ const Offers = () => {
           </p>
           <Link
             to="/catalogue/5"
-            className="flex md:w-[70%] gap-4 rounded-sm border-2 border-[#333] px-6 py-6 text-3xl capitalize"
+            className="flex gap-4 rounded-sm border-2 border-[#333] px-6 py-6 text-3xl capitalize md:w-[70%]"
           >
             View balcony furniture <BsArrowRightCircle size={25} />
           </Link>
