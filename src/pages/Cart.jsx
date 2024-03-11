@@ -3,12 +3,13 @@ import CartItem from "../components/CartItem";
 import { clearCart, getCart, getTotalCartPrice } from "../slices/CartSlice";
 import { MdDelete } from "react-icons/md";
 import EmptyCart from "./EmptyCart";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { formatCurrency } from "../components/helpers";
 import { PaystackButton } from "react-paystack";
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const cart = useSelector(getCart);
   const totalCartPrice = useSelector(getTotalCartPrice);
@@ -16,19 +17,26 @@ const Cart = () => {
 
   const shippingFee = totalCartPrice * (5 / 100);
   const finalPrice = totalCartPrice + shippingFee;
-  const finalPriceInNaira = finalPrice * 1600 * 100; // converted the final price from dollar to Naira and then convert the Naira to Kobo based on Paystack recommendation
+  const finalPriceInKobo = Math.round(finalPrice * 100)
 
   if (!cart.length) return <EmptyCart />;
 
   // REACT PAYSTACK INTEGRATION(https://github.com/iamraphson/react-paystack#1-using-the-paystack-hook)
+  const handlePaystackSuccess = () => {
+    // clear the cart
+    dispatch(clearCart())
+
+    // navigate to the success page
+    navigate("/app/success")
+  }
 
   const componentProps = {
     reference: new Date().getTime().toString(),
     email: userMail,
-    amount: finalPriceInNaira,
+    amount: finalPriceInKobo,
     publicKey: "pk_test_0b878b4dbaaefd8d4508cb37137bc82102be7d16",
     text: "Checkout",
-    onSuccess: () => alert("The payment was successful! 😎"),
+    onSuccess: handlePaystackSuccess,
     onClose: () => alert("Wait! Don't leave 😥"),
   };
 

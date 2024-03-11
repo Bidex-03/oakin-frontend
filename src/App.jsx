@@ -21,6 +21,7 @@ import Account from "./pages/Account";
 import RootLayout from "./pages/RootLayout";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Success from "./pages/Success";
 
 const router = createBrowserRouter([
   {
@@ -77,6 +78,10 @@ const router = createBrowserRouter([
             path: "/app/account",
             element: <Account />,
           },
+          {
+            path: "/app/success",
+            element: <Success />
+          }
         ],
       },
     ],
