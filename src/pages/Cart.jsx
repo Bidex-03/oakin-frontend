@@ -5,17 +5,32 @@ import { MdDelete } from "react-icons/md";
 import EmptyCart from "./EmptyCart";
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../components/helpers";
+import { PaystackButton } from "react-paystack";
 
 const Cart = () => {
   const dispatch = useDispatch();
 
   const cart = useSelector(getCart);
   const totalCartPrice = useSelector(getTotalCartPrice);
+  const userMail = useSelector((state) => state.user.mail);
 
   const shippingFee = totalCartPrice * (5 / 100);
   const finalPrice = totalCartPrice + shippingFee;
+  const finalPriceInNaira = finalPrice * 1600 * 100; // converted the final price from dollar to Naira and then convert the Naira to Kobo based on Paystack recommendation
 
   if (!cart.length) return <EmptyCart />;
+
+  // REACT PAYSTACK INTEGRATION(https://github.com/iamraphson/react-paystack#1-using-the-paystack-hook)
+
+  const componentProps = {
+    reference: new Date().getTime().toString(),
+    email: userMail,
+    amount: finalPriceInNaira,
+    publicKey: "pk_test_0b878b4dbaaefd8d4508cb37137bc82102be7d16",
+    text: "Checkout",
+    onSuccess: () => alert("The payment was successful! 😎"),
+    onClose: () => alert("Wait! Don't leave 😥"),
+  };
 
   return (
     <main className="px-8 py-6">
@@ -52,9 +67,10 @@ const Cart = () => {
             <p>Total Price: {formatCurrency(finalPrice)}</p>
           </div>
 
-          <button className="mt-4 w-full rounded-sm bg-[#333] px-6 py-4 text-4xl font-semibold text-white">
-            Checkout
-          </button>
+          <PaystackButton
+            {...componentProps}
+            className="mt-4 w-full rounded-sm bg-[#333] px-6 py-4 text-4xl font-semibold text-white"
+          />
         </div>
       </section>
     </main>
